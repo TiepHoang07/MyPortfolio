@@ -70,7 +70,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white dark:bg-gray-950 border-t dark:border-gray-800"
+            className="md:hidden bg-transparent backdrop-blur-md border-t dark:border-gray-800"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (

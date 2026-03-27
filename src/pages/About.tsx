@@ -3,8 +3,8 @@ import { Code2, Target, User, Heart, Database, MessageSquare, Smile } from 'luci
 
 export const About = () => {
   const skills = [
-    { name: 'HTML/CSS', level: '70%' },
-    { name: 'JavaScript/TypeScript', level: '45%' },
+    { name: 'HTML/CSS', level: '75%' },
+    { name: 'JavaScript/TypeScript', level: '50%' },
     { name: 'React', level: '55%' },
     { name: 'Tailwind CSS', level: '65%' },
     { name: 'Express', level: '40%' },
