@@ -3,12 +3,12 @@ import { Code2, Target, User, Heart, Database, MessageSquare, Smile } from 'luci
 
 export const About = () => {
   const skills = [
-    { name: 'React', level: '50%' },
-    { name: 'TypeScript', level: '40%' },
-    { name: 'Tailwind CSS', level: '60%' },
-    { name: 'Express', level: '30%' },
-    { name: 'NestJS', level: '40%' },
-    { name: 'Vite', level: '50%' },
+    { name: 'HTML/CSS', level: '70%' },
+    { name: 'JavaScript/TypeScript', level: '45%' },
+    { name: 'React', level: '55%' },
+    { name: 'Tailwind CSS', level: '65%' },
+    { name: 'Express', level: '40%' },
+    { name: 'NestJS', level: '45%' },
   ];
 
   return (
@@ -42,7 +42,7 @@ export const About = () => {
               <div className="p-2 bg-primary/10 rounded-lg text-primary"><Target className="w-5 h-5" /></div>
               <div>
                 <p className="text-xs text-gray-500 uppercase">My Goal</p>
-                <p className="font-semibold">Become a full-stack developer</p>
+                <p className="font-semibold">Become a software engineer</p>
               </div>
             </div>
             <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg flex items-center gap-4 border border-gray-100 dark:border-gray-800">
@@ -78,7 +78,7 @@ export const About = () => {
         >
           <div className="flex items-center gap-3 text-primary">
             <Code2 className="w-6 h-6" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Confidence of Skills</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Skills Confidence</h2>
           </div>
           <div className="space-y-5">
             {skills.map((skill) => (
@@ -93,7 +93,7 @@ export const About = () => {
                     whileInView={{ width: skill.level }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"
+                    className="bg-primary h-2 rounded-full shadow-2xl shadow-primary/50"
                   ></motion.div>
                 </div>
               </div>

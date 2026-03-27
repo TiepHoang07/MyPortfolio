@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
+import { Mail, MapPin, Send, Download } from 'lucide-react';
 
 export const Contact = () => {
   return (
@@ -51,7 +51,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-lg">GitHub</h3>
-                <a href="https://github.com/TiepHoang07" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">Click here</a>
+                <a href="https://github.com/TiepHoang07" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors underline cursor-pointer">https://github.com/TiepHoang07</a>
               </div>
             </div>
 
@@ -72,11 +72,10 @@ export const Contact = () => {
               Download my detailed resume to learn more about my experience and technical background.
             </p>
             <a 
-              href="/assets/dummy-cv.pdf" 
-              download 
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-xl font-bold hover:scale-105 transition-transform"
+              onClick={() => alert("CV is not ready yet, please contact me directly")}
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-xl font-bold hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
-              <Download className="w-5 h-5" /> Download CV
+              <Download className="w-5 h-5" /> See My Full CV
             </a>
           </div>
         </motion.div>
@@ -128,9 +127,10 @@ export const Contact = () => {
 
             <button 
               type="submit"
-              className="w-full btn-primary py-4 rounded-xl flex items-center justify-center gap-2 group"
+              disabled
+              className="w-full btn-primary py-4 rounded-xl flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              Send message is not available now
               <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </form>

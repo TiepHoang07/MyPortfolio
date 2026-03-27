@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, User } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import avatarImg from '../assets/avatar.png';
 
 export const Home = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-12">
-        {/* Left Side: Content */}
+        {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -19,8 +20,8 @@ export const Home = () => {
             </p>
             <p className="text-5xl font-bold leading-tight">Web Developer</p>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed">
-              I'm passionate about building high-performance, beautiful web applications with React, Node.js and modern technologies.
-              I want to contribute to open source real-world projects and learn new things.
+              I'm 18 years old high school student and i'm passionate about building beautiful web applications with React, Node.js and modern technologies.
+              I want to contribute to real-world projects and learn new things.
             </p>
           </div>
 
@@ -35,29 +36,28 @@ export const Home = () => {
           </div>
         </motion.div>
 
-        {/* Right Side: Image */}
+        {/* Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex-1 relative"
+          className="flex-1 relative items-center justify-center md:justify-end"
         >
-          <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
-            {/* Background Shape */}
+          <div className="relative w-72 h-100 md:w-96 md:h-110 mx-auto">
+            <div className="absolute top-0 -right-10 bottom-0 md:right-0 w-90 md:w-full border-2 border-primary/30 rounded-full -z-10 animate-[spin_20s_linear_infinite]"></div>
+            <div className="absolute top-0 -right-10 bottom-0 md:right-0 w-90 md:w-full border-2 border-primary/30 rounded-full -z-10 animate-[spin_15s_linear_infinite]"></div>
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
-            <div className="absolute -inset-4 border-2 border-primary/30 rounded-full -z-10 animate-[spin_20s_linear_infinite]"></div>
 
-            {/* Image Container Placeholder */}
-            <div className="w-full h-full rounded-2xl bg-primary/10 border-4 border-primary shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 flex items-center justify-center">
-              <div className="text-primary opacity-20 transform -rotate-3 group-hover:rotate-0 transition-transform">
-                <User className="w-32 h-32" />
+            <div className="w-full h-full rounded-2xl bg-primary/10 border-4 border-primary shadow-2xl rotate-3 flex items-center justify-center overflow-hidden">
+              <div className="-rotate-3 h-full w-full">
+                <img src={avatarImg} alt="Avatar" className="w-full h-full object-cover rotate-3" />
               </div>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats/Badges Section */}
+      {/* Badges Section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export const Home = () => {
           <p className="text-sm text-gray-500">Years Experience Of Coding</p>
         </div>
         <div className="text-center">
-          <p className="text-3xl font-bold text-primary">7+</p>
+          <p className="text-3xl font-bold text-primary">5+</p>
           <p className="text-sm text-gray-500">Projects Completed</p>
         </div>
         <div className="text-center">

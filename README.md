@@ -1,4 +1,4 @@
-# ✨ Modern Portfolio Website
+# ✨ My Portfolio Website
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)

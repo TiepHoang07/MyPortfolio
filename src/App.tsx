@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); // Slightly more than 3s for better feel
+    }, 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,7 +25,7 @@ function App() {
       <AnimatePresence mode="wait">
         {loading && <Intro key="intro" />}
       </AnimatePresence>
-      
+
       {!loading && (
         <Router>
           <div className="min-h-screen flex flex-col animate-in fade-in duration-1000">

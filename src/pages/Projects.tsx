@@ -1,6 +1,22 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X, FolderCode, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, X, ArrowRight } from 'lucide-react';
+import k_kpiverse from '../assets/projects/kpiverse/kpiverse.png';
+import k_dashboard from '../assets/projects/kpiverse/dashboard.png';
+import k_myKpis from '../assets/projects/kpiverse/myKpis.png';
+import k_groups from '../assets/projects/kpiverse/groups.png';
+import k_leaderboard from '../assets/projects/kpiverse/leaderboard.png';
+import v_vocabplay from '../assets/projects/vocabplay/vocabplay.png';
+import v_dashboard from '../assets/projects/vocabplay/dashboard.png';
+import v_dictionary from '../assets/projects/vocabplay/dictionary.png';
+import v_leaderboard from '../assets/projects/vocabplay/leaderboard.png';
+import v_game from '../assets/projects/vocabplay/memoryMatch.png';
+import p_portfolio from '../assets/projects/portfolio/portfolio.png';
+import p_about from '../assets/projects/portfolio/about.png';
+import p_contact from '../assets/projects/portfolio/contact.png';
+
+
+
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -8,49 +24,45 @@ export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'KPI Tracking Webapp',
-      description: 'A full-featured online store with real-time inventory management and secure payments.',
-      longDescription: 'This project involved building a scalable e-commerce solution with React, Redux, and Node.js. It features a custom CMS for administrators, a responsive storefront, and integration with Stripe for payments. The architecture was designed to handle high traffic and ensure data consistency.',
+      title: 'KPIverse',
+      description: 'A full-stack web application for tracking personal and group KPIs (Key Performance Indicators). Built with NestJS, React, and PostgreSQL.',
+      longDescription: 'KPIverse allows users to create and track personal KPIs with daily, weekly, or monthly tasks. Form groups to collaborate on shared KPIs. Add friends and view their activity. Visualize progress with interactive charts Compete on group leaderboards',
       color: 'bg-blue-500/20',
+      mainImage: k_kpiverse,
+      images: [k_dashboard, k_myKpis, k_groups, k_leaderboard],
       skills: ['NestJS', 'TypeScript', 'PostgreSQL', 'JWT', 'React', 'Tailwind CSS', 'Vite'],
-      github: '#',
-      link: '#'
+      github: 'https://github.com/TiepHoang07/KPIverse',
+      link: 'https://kpiverse.onrender.com'
     },
     {
       id: 2,
-      title: 'English Vocabulary Learning Webapp',
-      description: 'A web application for learning English vocabulary with interactive exercises and progress tracking.',
-      longDescription: 'This project involved building a web application for learning English vocabulary with interactive exercises and progress tracking. It features a responsive layout, a custom theme, and a contact form.',
+      title: 'Vocabplay',
+      description: 'Vocabplay is an interactive vocabulary learning application built to help users expand their word knowledge through active practice and games.',
+      longDescription: 'Easily add and organize words you want to learn and practice them with games like Memory Match, Word Chain, Interactive Flashcards. You can also track your memorization progress. Each games have leaderboard to compete with other people.',
       color: 'bg-green-500/20',
-      skills: ['React', 'TypeScript', 'Clerk', 'PostgreSQL(Neon)', 'Tailwind', 'Vite'],
-      github: '#',
-      link: '#'
+      mainImage: v_vocabplay,
+      images: [v_dashboard, v_dictionary, v_leaderboard, v_game],
+      skills: ['ExpressJS', 'React', 'TypeScript', 'JWT', 'PostgreSQL', 'Tailwind', 'Vite'],
+      github: 'https://github.com/TiepHoang07/VocabPlay',
+      link: 'https://vocabplay.onrender.com'
     },
     {
       id: 3,
       title: 'Portfolio Website',
       description: 'A portfolio website with a modern design and smooth animations.',
-      longDescription: 'This project involved building a portfolio website with a modern design and smooth animations. It features a responsive layout, a custom theme, and a contact form.',
+      longDescription: 'This my small portfolio website. It features a responsive layout, a custom theme, and a contact form.',
       color: 'bg-purple-500/20',
+      mainImage: p_portfolio,
+      images: [p_about, p_contact],
       skills: ['React', 'Tailwind', 'Framer Motion', 'TypeScript', 'Vite'],
-      github: '#',
-      link: '#'
+      github: 'https://github.com/TiepHoang07/MyPortfolio',
+      link: '/'
     },
-    {
-      id: 4,
-      title: 'Pomodoro Timer (Mobile App)',
-      description: 'A pomodoro timer with a friendly design and smooth animations.',
-      longDescription: 'This is a mobile application about pomodoro timer with friendly design with tracking states of user focusing hours.',
-      color: 'bg-blue-500/20',
-      skills: ['React Native', 'TypeScript', 'Expo'],
-      github: '#',
-      link: '#'
-    }
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
@@ -71,7 +83,7 @@ export const Projects = () => {
             onClick={() => setSelectedProject(project)}
           >
             <div className={`relative h-48 ${project.color} flex items-center justify-center`}>
-              <FolderCode className="w-16 h-16 text-primary/40 group-hover:scale-110 transition-transform duration-500" />
+              <img src={project.mainImage} alt={project.title} className="w-full h-full object-cover text-primary/40 group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span className="bg-white text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg">View Details</span>
               </div>
@@ -105,17 +117,21 @@ export const Projects = () => {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="bg-white dark:bg-gray-900 max-w-4xl w-full rounded-3xl overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto"
             >
-              <button 
+              <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full z-10 transition-colors"
+                className="absolute cursor-pointer top-6 right-6 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full z-10 transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-6 h-6" />
               </button>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className={`h-64 md:h-full ${selectedProject.color} flex items-center justify-center min-h-[300px]`}>
-                   <FolderCode className="w-32 h-32 text-primary/30" />
+                  <div className='grid grid-rows-2 grid-cols-2 h-full gap-2 w-full p-2'>
+                    {selectedProject.images.map((image: string, index: number) => (
+                      <img key={index} src={image} alt={selectedProject.title} className="w-full h-full object-cover rounded-lg" />
+                    ))}
+                  </div>
                 </div>
                 <div className="p-8 md:p-12 space-y-6">
                   <div>
@@ -128,16 +144,16 @@ export const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                     {selectedProject.longDescription}
                   </p>
-                  
+
                   <div className="flex gap-4 pt-4">
-                    <a href={selectedProject.link} className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm">
+                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm">
                       <ExternalLink className="w-4 h-4" /> Live Demo
                     </a>
-                    <a href={selectedProject.github} className="btn-outline flex-1 flex items-center justify-center gap-2 text-sm">
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn-outline flex-1 flex items-center justify-center gap-2 text-sm">
                       <Github className="w-4 h-4" /> GitHub
                     </a>
                   </div>
