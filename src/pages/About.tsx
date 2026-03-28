@@ -35,7 +35,7 @@ export const About = () => {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Personal Information</h2>
           </div>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            I'm currently third-year high school student and i'm a passionate developer about website development and just started learning application development. I love creating smooth, interactive, and efficient web applications. I'm always learning new technologies and improving my skills. My goal is to become a full-stack developer and bring useful products to the community.
+            I'm currently third-year high school student and i'm a passionate developer about website development. I love creating smooth, interactive, and efficient web applications. I'm always learning new technologies and improving my skills. My goal is to become a full-stack developer and bring useful products to the community.
           </p>
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg flex items-center gap-4 border border-gray-100 dark:border-gray-800">

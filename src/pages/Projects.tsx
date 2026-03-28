@@ -133,7 +133,7 @@ export const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className="p-8 md:p-12 space-y-6">
+                <div className="p-8 md:p-12 space-y-3">
                   <div>
                     <h2 className="text-3xl font-bold mb-2">{selectedProject.title}</h2>
                     <div className="flex flex-wrap gap-2 mt-4">
@@ -149,14 +149,16 @@ export const Projects = () => {
                     {selectedProject.longDescription}
                   </p>
 
-                  <div className="flex gap-4 pt-4">
-                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm">
+                  <div className="flex gap-4 pt-2">
+                    <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2 text-sm">
                       <ExternalLink className="w-4 h-4" /> Live Demo
                     </a>
-                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn-outline flex-1 flex items-center justify-center gap-2 text-sm">
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn-outline flex items-center justify-center gap-2 text-sm">
                       <Github className="w-4 h-4" /> GitHub
                     </a>
                   </div>
+
+                  <span className='text-sm text-gray-500'>*live demo may take 1-2 minutes to load because it's free hosting</span>
                 </div>
               </div>
             </motion.div>
