@@ -1,13 +1,12 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap');
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-primary: #fbbf24;
   --color-primary-hover: #f59e0b;
-  --font-dancing-script: 'Dancing Script', cursive;
-  --font-playwrite: 'Playwrite IE', cursive;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 }
 
 @layer base {
@@ -20,22 +19,22 @@
     --primary: #fbbf24;
     --primary-foreground: #000;
   }
-}
 
-body {
-  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300;
-  font-family: 'Outfit', sans-serif;
-}
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300;
+    font-family: 'Outfit', sans-serif;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-serif {
-  @apply font-bold tracking-tight text-gray-900 dark:text-white;
-  font-family: 'Playfair Display', serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-serif {
+    @apply font-bold tracking-tight text-gray-900 dark:text-white;
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 .btn-primary {

@@ -40,7 +40,7 @@ export const Intro = () => {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="flex overflow-hidden text-4xl md:text-6xl font-playwrite"
+        className="flex overflow-hidden text-4xl md:text-6xl font-playfair"
       >
         {text.split("").map((letter, index) => (
           <motion.span
