@@ -1,11 +1,13 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Download, Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Send, FileText, Loader2, Github, Globe } from 'lucide-react';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Resume } from '../components/Resume';
 
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [showResume, setShowResume] = useState(false);
 
   const handleSendEmail = (e: React.SubmitEvent) => {
     e.preventDefault();
@@ -60,7 +62,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-lg">Email</h3>
-                <p className="text-gray-600 dark:text-gray-400">hoantt0712@gmail.com</p>
+                <p className="text-gray-600 dark:text-gray-400">tieppx0712@gmail.com</p>
               </div>
             </div>
 
@@ -76,11 +78,21 @@ export const Contact = () => {
 
             <div className="flex items-start gap-4">
               <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                <MapPin className="w-6 h-6" />
+                <Github className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="font-bold text-lg">GitHub</h3>
-                <a href="https://github.com/TiepHoang07" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors underline cursor-pointer">https://github.com/TiepHoang07</a>
+                <a href="https://github.com/TiepHoang07" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors underline cursor-pointer">github.com/TiepHoang07</a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                <Globe className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Portfolio</h3>
+                <a href="https://hoang-tiep-portfolio.onrender.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors underline cursor-pointer">hoang-tiep-portfolio.onrender.com</a>
               </div>
             </div>
 
@@ -101,10 +113,10 @@ export const Contact = () => {
               Download my detailed resume to learn more about my experience and technical background.
             </p>
             <a
-              onClick={() => alert("CV is not ready yet, please contact me directly")}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-xl font-bold hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              onClick={() => setShowResume(true)}
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-black text-black dark:text-white rounded-xl font-bold hover:scale-105 transition-transform cursor-pointer"
             >
-              <Download className="w-5 h-5" /> Download CV
+              <FileText className="w-5 h-5" /> View My CV
             </a>
           </div>
         </motion.div>
@@ -206,6 +218,11 @@ export const Contact = () => {
           </form>
         </motion.div>
       </div>
+      <AnimatePresence>
+        {showResume && (
+          <Resume isOpen={showResume} onClose={() => setShowResume(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
