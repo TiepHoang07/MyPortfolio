@@ -5,7 +5,7 @@ import k_kpiverse from '../assets/projects/kpiverse/kpiverse.png';
 import k_dashboard from '../assets/projects/kpiverse/dashboard.png';
 import k_myKpis from '../assets/projects/kpiverse/myKpis.png';
 import k_groups from '../assets/projects/kpiverse/groups.png';
-import k_leaderboard from '../assets/projects/kpiverse/leaderboard.png';
+import k_friends from '../assets/projects/kpiverse/friends.png';
 import v_vocabplay from '../assets/projects/vocabplay/vocabplay.png';
 import v_dashboard from '../assets/projects/vocabplay/dashboard.png';
 import v_dictionary from '../assets/projects/vocabplay/dictionary.png';
@@ -29,10 +29,14 @@ export const Projects = () => {
       longDescription: 'KPIverse allows users to create and track personal KPIs with daily, weekly, or monthly tasks. Form groups to collaborate on shared KPIs. Add friends and view their activity. Visualize progress with interactive charts Compete on group leaderboards',
       color: 'bg-blue-500/20',
       mainImage: k_kpiverse,
-      images: [k_dashboard, k_myKpis, k_groups, k_leaderboard],
+      images: [k_dashboard, k_myKpis, k_groups, k_friends],
       skills: ['NestJS', 'TypeScript', 'PostgreSQL', 'JWT', 'React', 'Tailwind CSS', 'Vite'],
       github: 'https://github.com/TiepHoang07/KPIverse',
-      link: 'https://kpiverse.onrender.com'
+      link: 'https://kpiverse.onrender.com',
+      account: {
+        email: 'test@gmail.com',
+        password: 'test12345'
+      }
     },
     {
       id: 2,
@@ -44,7 +48,11 @@ export const Projects = () => {
       images: [v_dashboard, v_dictionary, v_leaderboard, v_game],
       skills: ['ExpressJS', 'React', 'TypeScript', 'JWT', 'PostgreSQL', 'Tailwind', 'Vite'],
       github: 'https://github.com/TiepHoang07/VocabPlay',
-      link: 'https://vocabplay.onrender.com'
+      link: 'https://vocabplay.onrender.com',
+      account: {
+        email: 'test@gmail.com',
+        password: 'test12345'
+      }
     },
     {
       id: 3,
@@ -56,7 +64,7 @@ export const Projects = () => {
       images: [p_about, p_contact],
       skills: ['React', 'Tailwind', 'Framer Motion', 'TypeScript', 'Vite'],
       github: 'https://github.com/TiepHoang07/MyPortfolio',
-      link: '/'
+      link: '/',
     },
   ];
 
@@ -148,6 +156,18 @@ export const Projects = () => {
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                     {selectedProject.longDescription}
                   </p>
+
+                  {selectedProject.account && (
+                    <div className="flex flex-col pt-2">
+                      <p className='font-semibold text-gray-900 dark:text-white'>Account for testing:</p>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                        Email: {selectedProject.account.email}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                        Password: {selectedProject.account.password}
+                      </p>
+                    </div>
+                  )}
 
                   <div className="flex gap-4 pt-2">
                     <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2 text-sm">
